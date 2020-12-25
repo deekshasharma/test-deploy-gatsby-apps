@@ -6,6 +6,13 @@ import { theme } from "../theme"
 // import { routes } from "../shared/configurable"
 import makeStyles from "@material-ui/core/styles/makeStyles"
 
+const routes = [
+  { name: "DRINKS", path: "/drinks" },
+  { name: "EATS", path: "/eats" },
+  { name: "SHOP", path: "/shop" },
+  { name: "ABOUT", path: "/about" },
+]
+
 export const PageLayout = ({ children }) => {
   const classes = useStyles()
   return (
@@ -13,7 +20,7 @@ export const PageLayout = ({ children }) => {
       <Grid container justify={"center"}>
         <Grid item xs={12}>
           {/*<Header routes={routes} />*/}
-          <Header />
+          <Header routes={routes} />
         </Grid>
         <Grid item xs={12} style={{ paddingTop: "20vh" }}>
           <Grid container justify={"center"}>

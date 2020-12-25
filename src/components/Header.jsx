@@ -1,11 +1,10 @@
 import React from "react"
-import { AppBar, Grid, Tab, Tabs, Toolbar } from "@material-ui/core"
+import { AppBar, Grid, IconButton, Toolbar, Button } from "@material-ui/core"
 import logo from "../images/logo.svg"
 import cart from "../images/cart.svg"
+import { Link } from "gatsby"
 
-export const Header = ({ tabValue }) => {
-  const handleClick = (event, newValue) => console.log("hello")
-
+export const Header = ({ routes }) => {
   return (
     <div style={{ flexGrow: "1" }}>
       <AppBar
@@ -16,11 +15,13 @@ export const Header = ({ tabValue }) => {
         }}
       >
         <Grid container>
-          <img
-            src={logo}
-            style={{ height: "12vh", width: "12vw" }}
-            alt={"logo"}
-          />
+          <IconButton disableFocusRipple={true}>
+            <img
+              src={logo}
+              style={{ height: "12vh", width: "12vw" }}
+              alt={"logo"}
+            />
+          </IconButton>
           <Toolbar
             style={{
               flexGrow: "1",
@@ -28,16 +29,17 @@ export const Header = ({ tabValue }) => {
               justifyContent: "flex-end",
             }}
           >
-            <Tabs
-              value={tabValue}
-              onChange={handleClick}
-              textColor={"textSecondary"}
-            >
-              <Tab label="DRINKS" />
-              <Tab label="EATS" />
-              <Tab label="SHOP" />
-              <Tab label="ABOUT" />
-            </Tabs>
+            {routes.map((route, key) => {
+              return (
+                <Link
+                  to={route.path}
+                  key={key}
+                  style={{ textDecoration: "none", marginRight: "4vw" }}
+                >
+                  <Button style={{ color: "black" }}>{route.name}</Button>
+                </Link>
+              )
+            })}
             <img
               src={cart}
               style={{ height: "5vh", width: "5vw", cursor: "pointer" }}
