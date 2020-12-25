@@ -9,7 +9,6 @@ import makeStyles from "@material-ui/core/styles/makeStyles"
 const routes = [
   { name: "DRINKS", path: "/drinks" },
   { name: "EATS", path: "/eats" },
-  { name: "SHOP", path: "/shop" },
   { name: "ABOUT", path: "/about" },
 ]
 
