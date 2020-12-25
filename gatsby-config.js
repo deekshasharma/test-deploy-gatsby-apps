@@ -1,6 +1,6 @@
 module.exports = {
   plugins: [
-    "gatsby-plugin-image",
+    `gatsby-plugin-material-ui`,
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-mdx",
@@ -23,4 +23,4 @@ module.exports = {
       __key: "pages",
     },
   ],
-};
+}
