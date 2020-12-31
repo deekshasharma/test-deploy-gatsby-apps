@@ -1,10 +1,9 @@
 import React from "react"
 import { Header } from "./header"
-// import styles from "./PageLayout.module.css"
 import { Divider, Grid, MuiThemeProvider, Typography } from "@material-ui/core"
 import { theme } from "../theme"
-// import { routes } from "../shared/configurable"
 import makeStyles from "@material-ui/core/styles/makeStyles"
+import { AppFooter } from "./Footer"
 
 const routes = [
   { name: "DRINKS", path: "/drinks" },
@@ -18,7 +17,6 @@ export const PageLayout = ({ children }) => {
     <MuiThemeProvider theme={theme}>
       <Grid container justify={"center"}>
         <Grid item xs={12}>
-          {/*<Header routes={routes} />*/}
           <Header routes={routes} />
         </Grid>
         <Grid item xs={12} style={{ paddingTop: "20vh" }}>
@@ -30,11 +28,9 @@ export const PageLayout = ({ children }) => {
         </Grid>
         <Grid item xs={12} className={classes.footerContainer}>
           <Divider />
-          <Grid container justify={"center"} className={classes.footer}>
-            <footer>
-              <Typography variant="caption">© Mukti Cafe</Typography>
-            </footer>
-          </Grid>
+          {/*<Grid container justify={"center"} className={classes.footer}>*/}
+          <AppFooter />
+          {/*</Grid>*/}
         </Grid>
       </Grid>
     </MuiThemeProvider>
