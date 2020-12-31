@@ -11,7 +11,6 @@ export const Header = ({ routes }) => {
         position="fixed"
         style={{
           boxShadow: "0px 0px 0px 0px",
-          marginTop: "5vh",
         }}
       >
         <Grid container>
