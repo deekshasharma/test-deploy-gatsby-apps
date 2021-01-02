@@ -1,14 +1,33 @@
 import React from "react"
-import { Grid, Typography } from "@material-ui/core"
+import { Grid, makeStyles, Typography } from "@material-ui/core"
 import cafeLocation from "../images/cafe-location-image.svg"
 
+const useStyles = makeStyles(theme => ({
+  cafeImg: {
+    width: "40vw",
+    [theme.breakpoints.down("sm")]: {
+      width: "100vw",
+      marginBottom: theme.spacing(3),
+    },
+  },
+  address: {
+    paddingRight: "10vw",
+  },
+  typography: { paddingBottom: "5vh" },
+}))
+
 export const CafeLocation = () => {
+  const classes = useStyles()
   return (
     <Grid container justify={"space-between"} alignItems={"center"}>
       <Grid item>
-        <img src={cafeLocation} alt={"Mukti Cafe"} style={{ width: "40vw" }} />
+        <img
+          src={cafeLocation}
+          alt={"Mukti Cafe"}
+          className={classes.cafeImg}
+        />
       </Grid>
-      <Grid item style={{ paddingRight: "10vw" }}>
+      <Grid item className={classes.address}>
         <Grid container direction="column">
           <Typography variant="h6" gutterBottom>
             LOCATION
@@ -16,7 +35,8 @@ export const CafeLocation = () => {
           <Typography
             variant="subtitle1"
             gutterBottom
-            style={{ paddingBottom: "5vh" }}
+            color="textSecondary"
+            className={classes.typography}
           >
             2835 Cook Street Village, Victoria British Columbia
           </Typography>
@@ -26,17 +46,23 @@ export const CafeLocation = () => {
           <Typography
             variant="subtitle1"
             gutterBottom
-            style={{ paddingBottom: "5vh" }}
+            color="textSecondary"
+            className={classes.typography}
           >
             SUN - SAT | 8:00AM - 5:00PM
           </Typography>
           <Typography variant="h6" gutterBottom>
             CONTACT
           </Typography>
-          <Typography variant="subtitle1" gutterBottom>
+          <Typography variant="subtitle1" gutterBottom color="textSecondary">
             250.585.7765
           </Typography>
-          <Typography variant="subtitle1" gutterBottom>
+          <Typography
+            variant="subtitle1"
+            gutterBottom
+            color="textSecondary"
+            className={classes.typography}
+          >
             mukticafeorder@gmail.com
           </Typography>
         </Grid>
