@@ -21,7 +21,7 @@ export const CafeFoodImages = () => {
           }}
         >
           <Grid container justify="center" alignItems="flex-end">
-            <Typography variant="subtitle1">{text}</Typography>
+            <Typography variant="subtitle2">{text}</Typography>
           </Grid>
         </Grid>
         <Grid item xs={12}>
