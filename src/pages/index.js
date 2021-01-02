@@ -1,6 +1,8 @@
 import * as React from "react"
 import { PageLayout } from "../components/PageLayout"
 import heroImage from "../images/hero-image.svg"
+import { CafeLocation } from "../components/CafeLocation"
+import { CafeFoodImages } from "../components/CafeFoodImages"
 
 const pageStyles = {
   color: "#232129",
@@ -12,6 +14,8 @@ const IndexPage = () => {
     <main style={pageStyles}>
       <PageLayout>
         <img src={heroImage} alt={"coffee image"} style={{ width: "100%" }} />
+        <CafeLocation />
+        <CafeFoodImages />
       </PageLayout>
     </main>
   )
