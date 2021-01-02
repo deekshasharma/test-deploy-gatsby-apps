@@ -32,9 +32,9 @@ export const CafeFoodImages = () => {
             style={{ width: "100%" }}
           >
             <img src={food1} alt={"shakes"} style={{ width: "20vw" }} />
-            <img src={food2} alt={"shakes"} style={{ width: "20vw" }} />
-            <img src={food3} alt={"shakes"} style={{ width: "20vw" }} />
-            <img src={food5} alt={"shakes"} style={{ width: "20vw" }} />
+            <img src={food2} alt={"food"} style={{ width: "20vw" }} />
+            <img src={food3} alt={"smoothie"} style={{ width: "20vw" }} />
+            <img src={food5} alt={"coffee"} style={{ width: "20vw" }} />
           </Grid>
         </Grid>
       </Grid>
