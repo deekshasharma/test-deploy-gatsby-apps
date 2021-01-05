@@ -1,9 +1,9 @@
 import React from "react"
-import { Header } from "./header"
+import { Header } from "../Header"
 import { Divider, Grid, MuiThemeProvider } from "@material-ui/core"
-import { theme } from "../theme"
+import { theme } from "../../theme"
 import makeStyles from "@material-ui/core/styles/makeStyles"
-import { AppFooter } from "./Footer"
+import { AppFooter } from "../Footer"
 
 const routes = [
   { name: "DRINKS", path: "/drinks" },
