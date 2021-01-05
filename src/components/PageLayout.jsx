@@ -1,6 +1,6 @@
 import React from "react"
 import { Header } from "./header"
-import { Divider, Grid, MuiThemeProvider, Typography } from "@material-ui/core"
+import { Divider, Grid, MuiThemeProvider } from "@material-ui/core"
 import { theme } from "../theme"
 import makeStyles from "@material-ui/core/styles/makeStyles"
 import { AppFooter } from "./Footer"
