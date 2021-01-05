@@ -27,10 +27,7 @@ export const PageLayout = ({ children }) => {
           </Grid>
         </Grid>
         <Grid item xs={12} className={classes.footerContainer}>
-          <Divider />
-          {/*<Grid container justify={"center"} className={classes.footer}>*/}
           <AppFooter />
-          {/*</Grid>*/}
         </Grid>
       </Grid>
     </MuiThemeProvider>

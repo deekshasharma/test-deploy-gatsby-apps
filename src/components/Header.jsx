@@ -41,13 +41,18 @@ export const Header = ({ routes }) => {
                 </Link>
               )
             })}
-            <Button style={{ borderRadius: "20px" }}>
-              <img
-                src={cart}
-                style={{ height: "4vh", width: "4vw", cursor: "pointer" }}
-                alt={"cart"}
-              />
-            </Button>
+            <Link
+              to={"/cart"}
+              style={{ textDecoration: "none", marginRight: "4vw" }}
+            >
+              <Button style={{ borderRadius: "20px" }}>
+                <img
+                  src={cart}
+                  style={{ height: "4vh", width: "4vw", cursor: "pointer" }}
+                  alt={"cart"}
+                />
+              </Button>
+            </Link>
           </Toolbar>
         </Grid>
       </AppBar>
