@@ -1,10 +1,24 @@
 import React from "react"
-import { AppBar, Grid, IconButton, Toolbar, Button } from "@material-ui/core"
+import {
+  AppBar,
+  Grid,
+  IconButton,
+  Toolbar,
+  Button,
+  makeStyles,
+} from "@material-ui/core"
 import logo from "../images/logo.svg"
 import cart from "../images/cart.svg"
-import { Link } from "gatsby"
+import { Link, navigate } from "gatsby"
+
+const useStyles = makeStyles(theme => ({
+  iconButton: {
+    "&:hover": { backgroundColor: "transparent" },
+  },
+}))
 
 export const Header = ({ routes }) => {
+  const classes = useStyles()
   return (
     <div style={{ flexGrow: "1" }}>
       <AppBar
@@ -14,7 +28,12 @@ export const Header = ({ routes }) => {
         }}
       >
         <Grid container>
-          <IconButton disableFocusRipple={true}>
+          <IconButton
+            disableFocusRipple
+            disableRipple
+            className={classes.iconButton}
+            onClick={() => navigate("/")}
+          >
             <img
               src={logo}
               style={{ height: "12vh", width: "12vw" }}
