@@ -1,6 +1,5 @@
 import React from "react"
 import { Divider, Grid, Typography } from "@material-ui/core"
-import { UserInfo } from "./UserInfo"
 
 export const OrderSummary = ({ items }) => {
   return (

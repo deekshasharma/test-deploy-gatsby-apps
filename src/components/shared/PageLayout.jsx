@@ -4,6 +4,7 @@ import { Divider, Grid, MuiThemeProvider } from "@material-ui/core"
 import { theme } from "../../theme"
 import makeStyles from "@material-ui/core/styles/makeStyles"
 import { AppFooter } from "../Footer"
+import { HeaderWithLogo } from "../HeaderWithLogo"
 
 const routes = [
   { name: "DRINKS", path: "/drinks" },
@@ -11,13 +12,14 @@ const routes = [
   { name: "ABOUT", path: "/about" },
 ]
 
-export const PageLayout = ({ children }) => {
+export const PageLayout = ({ children, headerWithLogo }) => {
   const classes = useStyles()
   return (
     <MuiThemeProvider theme={theme}>
       <Grid container justify={"center"}>
         <Grid item xs={12}>
-          <Header routes={routes} />
+          {!headerWithLogo && <Header routes={routes} />}
+          {headerWithLogo && <HeaderWithLogo />}
         </Grid>
         <Grid item xs={12} style={{ paddingTop: "20vh" }}>
           <Grid container justify={"center"}>

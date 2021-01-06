@@ -18,7 +18,7 @@ export const UserInfo = () => {
           <TextField
             color="secondary"
             fullWidth
-            id="filled-basic"
+            id="full-name"
             label="Full Name"
             variant="filled"
             style={{ paddingBottom: "5vh" }}
@@ -26,9 +26,10 @@ export const UserInfo = () => {
           <TextField
             color="secondary"
             fullWidth
-            id="filled-basic"
+            id="phone-number"
             label="Phone Number"
             variant="filled"
+            type="number"
             style={{ paddingBottom: "5vh" }}
           />
           <Button
