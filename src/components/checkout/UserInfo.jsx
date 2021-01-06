@@ -1,5 +1,6 @@
 import React from "react"
 import { Button, Grid, TextField, Typography } from "@material-ui/core"
+import { Link } from "gatsby"
 
 export const UserInfo = () => {
   return (
@@ -40,7 +41,9 @@ export const UserInfo = () => {
           >
             ORDER NOW
           </Button>
-          <Typography variant="subtitle2">Continue Shopping</Typography>
+          <Link to={"/drinks"} style={{ color: "black" }}>
+            <Typography variant="subtitle2">Continue Shopping</Typography>
+          </Link>
         </Grid>
       </Grid>
     </Grid>
