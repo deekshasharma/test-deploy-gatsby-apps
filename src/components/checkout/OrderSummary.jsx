@@ -1,13 +1,10 @@
 import React from "react"
 import { Divider, Grid, Typography } from "@material-ui/core"
+import styles from "./OrderSummary.module.css"
 
 export const OrderSummary = ({ items }) => {
   return (
-    <Grid
-      container
-      direction="column"
-      style={{ padding: "40px", border: "0.5px solid gray", width: "80vw" }}
-    >
+    <Grid container direction="column" className={styles.summaryContainer}>
       <Grid item>
         <Typography gutterBottom variant="h6" align="center">
           ORDER SUMMARY
@@ -27,7 +24,9 @@ export const OrderSummary = ({ items }) => {
           )
         })}
       </Grid>
-      <Divider style={{ marginTop: "5vh", marginBottom: "5vh" }} />
+      <Grid item className={styles.summaryDivider}>
+        <Divider />
+      </Grid>
       <Grid item>
         <Grid container justify="space-between">
           <Typography> ORDER TOTAL</Typography>
