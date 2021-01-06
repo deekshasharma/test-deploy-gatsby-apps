@@ -1,6 +1,6 @@
 import React from "react"
 import { Button, Grid, TextField, Typography } from "@material-ui/core"
-import { Link } from "gatsby"
+import { Link, navigate } from "gatsby"
 
 export const UserInfo = () => {
   return (
@@ -38,6 +38,7 @@ export const UserInfo = () => {
             size="large"
             variant="contained"
             style={{ marginBottom: "5vh" }}
+            onClick={() => navigate("/final-order")}
           >
             ORDER NOW
           </Button>
