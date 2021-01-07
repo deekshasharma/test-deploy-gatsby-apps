@@ -1,8 +1,15 @@
 import React from "react"
-import { Card, Grid, Typography } from "@material-ui/core"
+import {
+  Card,
+  Grid,
+  IconButton,
+  makeStyles,
+  Typography,
+} from "@material-ui/core"
 import addButton from "../../images/add-button.svg"
 
-export const MenuCard = ({ name, price }) => {
+export const MenuCard = ({ name, price, onAddItem }) => {
+  const classes = useStyles()
   return (
     <Card style={{ padding: "10px" }}>
       <Grid container justify="space-between" spacing={5} direction="column">
@@ -15,11 +22,18 @@ export const MenuCard = ({ name, price }) => {
               <Typography variant="body2">{price}</Typography>
             </Grid>
             <Grid item>
-              <img
-                src={addButton}
-                alt={"add-item"}
-                style={{ width: "6vw", height: "6vh" }}
-              />
+              <IconButton
+                component="span"
+                size="small"
+                className={classes.iconButton}
+                onClick={onAddItem}
+              >
+                <img
+                  src={addButton}
+                  alt={"add-item"}
+                  style={{ width: "6vw", height: "6vh" }}
+                />
+              </IconButton>
             </Grid>
           </Grid>
         </Grid>
@@ -27,3 +41,9 @@ export const MenuCard = ({ name, price }) => {
     </Card>
   )
 }
+
+const useStyles = makeStyles(theme => ({
+  iconButton: {
+    "&:hover": { backgroundColor: "transparent" },
+  },
+}))

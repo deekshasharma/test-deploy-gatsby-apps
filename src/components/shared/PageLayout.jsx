@@ -11,14 +11,13 @@ const routes = [
   { name: "ABOUT", path: "/about" },
 ]
 
-export const PageLayout = ({ children, hideMenu }) => {
-  console.log(hideMenu)
+export const PageLayout = ({ children, hideMenu, cartSize }) => {
   const classes = useStyles()
   return (
     <MuiThemeProvider theme={theme}>
       <Grid container justify={"center"}>
         <Grid item xs={12}>
-          {!hideMenu && <HeaderWithMenu routes={routes} />}
+          {!hideMenu && <HeaderWithMenu routes={routes} cartSize={cartSize} />}
           {hideMenu && <SimpleHeader />}
         </Grid>
         <Grid item xs={12} style={{ paddingTop: "20vh" }}>

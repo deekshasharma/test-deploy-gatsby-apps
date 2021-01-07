@@ -4,7 +4,8 @@ import cart from "../images/cart.svg"
 import { Link } from "gatsby"
 import { MuktiLogo } from "./shared/MuktiLogo"
 
-export const HeaderWithMenu = ({ routes, numItems }) => {
+export const HeaderWithMenu = ({ routes, cartSize }) => {
+  const numItems = cartSize ? cartSize : ""
   return (
     <div style={{ flexGrow: "1" }}>
       <AppBar
@@ -45,7 +46,7 @@ export const HeaderWithMenu = ({ routes, numItems }) => {
                   style={{ height: "4vh", width: "4vw", cursor: "pointer" }}
                   alt={"cart"}
                 />
-                <Typography>{numItems || ""}</Typography>
+                <Typography>{numItems}</Typography>
               </Button>
             </Link>
           </Toolbar>

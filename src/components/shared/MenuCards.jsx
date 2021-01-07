@@ -2,7 +2,7 @@ import React from "react"
 import { Grid, Typography } from "@material-ui/core"
 import { MenuCard } from "./MenuCard"
 
-export const MenuCards = ({ heading, text, items }) => {
+export const MenuCards = ({ heading, text, items, onAddItem }) => {
   return (
     <div style={{ padding: "40px" }}>
       <Grid container direction="column" justify="center" alignItems="center">
@@ -15,7 +15,11 @@ export const MenuCards = ({ heading, text, items }) => {
         {items.map((eat, key) => {
           return (
             <Grid key={key} item xs={12} md={4}>
-              <MenuCard name={eat.name} price={eat.price} />
+              <MenuCard
+                name={eat.name}
+                price={eat.price}
+                onAddItem={onAddItem}
+              />
             </Grid>
           )
         })}
