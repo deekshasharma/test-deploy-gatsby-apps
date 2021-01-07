@@ -1,7 +1,6 @@
 import React from "react"
 import { PageLayout } from "../components/shared/PageLayout"
-import { Grid, Typography } from "@material-ui/core"
-import { MenuCard } from "../components/shared/MenuCard"
+import { MenuCards } from "../components/shared/MenuCards"
 
 const allDrinks = [
   { name: "Drip Coffee", price: "$2.30" },
@@ -14,26 +13,19 @@ const allDrinks = [
   { name: "Latte", price: "$4.50" },
   { name: "Hot Chocolate", price: "$3.75" },
 ]
+
+const drinksData = {
+  heading: "Drinks",
+  text: "Now available for delivery locally Mon-Fri from 8am-3pm",
+}
 const Drinks = () => {
   return (
     <PageLayout>
-      <div style={{ padding: "40px" }}>
-        <Grid container direction="column" justify="center" alignItems="center">
-          <Typography variant="h3">Drinks</Typography>
-          <Typography variant="subtitle1" align="center">
-            Now available for delivery locally Mon-Fri from 8am-3pm
-          </Typography>
-        </Grid>
-        <Grid container spacing={9} style={{ marginTop: "10vh" }}>
-          {allDrinks.map((drink, key) => {
-            return (
-              <Grid key={key} item xs={12} md={4}>
-                <MenuCard name={drink.name} price={drink.price} />
-              </Grid>
-            )
-          })}
-        </Grid>
-      </div>
+      <MenuCards
+        heading={drinksData.heading}
+        text={drinksData.text}
+        items={allDrinks}
+      />
     </PageLayout>
   )
 }
