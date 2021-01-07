@@ -8,7 +8,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export const HeaderWithLogo = ({ route }) => {
+export const SimpleHeader = ({ route }) => {
   const classes = useStyles()
   return (
     <div style={{ flexGrow: "1" }}>

@@ -1,15 +1,8 @@
 import React from "react"
-import {
-  AppBar,
-  Grid,
-  IconButton,
-  Toolbar,
-  Button,
-  makeStyles,
-} from "@material-ui/core"
-import logo from "../images/logo.svg"
+import { AppBar, Button, Grid, makeStyles, Toolbar } from "@material-ui/core"
 import cart from "../images/cart.svg"
-import { Link, navigate } from "gatsby"
+import { Link } from "gatsby"
+import { MuktiLogo } from "./shared/MuktiLogo"
 
 const useStyles = makeStyles(theme => ({
   iconButton: {
@@ -17,7 +10,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export const Header = ({ routes }) => {
+export const HeaderWithMenu = ({ routes }) => {
   const classes = useStyles()
   return (
     <div style={{ flexGrow: "1" }}>
@@ -28,18 +21,7 @@ export const Header = ({ routes }) => {
         }}
       >
         <Grid container>
-          <IconButton
-            disableFocusRipple
-            disableRipple
-            className={classes.iconButton}
-            onClick={() => navigate("/")}
-          >
-            <img
-              src={logo}
-              style={{ height: "12vh", width: "12vw" }}
-              alt={"logo"}
-            />
-          </IconButton>
+          <MuktiLogo />
           <Toolbar
             style={{
               flexGrow: "1",
