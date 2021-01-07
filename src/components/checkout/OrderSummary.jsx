@@ -3,6 +3,10 @@ import { Divider, Grid, Typography } from "@material-ui/core"
 import styles from "./OrderSummary.module.css"
 
 export const OrderSummary = ({ items }) => {
+  const getTotal = () => {
+    return items.reduce((acc, item) => acc + parseFloat(item.price), 0)
+  }
+
   return (
     <Grid container direction="column" className={styles.summaryContainer}>
       <Grid item>
@@ -11,9 +15,9 @@ export const OrderSummary = ({ items }) => {
         </Typography>
       </Grid>
       <Grid item>
-        {items.map(item => {
+        {items.map((item, key) => {
           return (
-            <Grid container justify="space-between">
+            <Grid key={key} container justify="space-between">
               <Typography gutterBottom variant="body1">
                 {item.name}
               </Typography>
@@ -30,7 +34,7 @@ export const OrderSummary = ({ items }) => {
       <Grid item>
         <Grid container justify="space-between">
           <Typography> ORDER TOTAL</Typography>
-          <Typography> $45</Typography>
+          <Typography> ${getTotal().toFixed(2)}</Typography>
         </Grid>
       </Grid>
     </Grid>
