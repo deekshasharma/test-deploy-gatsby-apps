@@ -13,7 +13,7 @@ const items = [
 ]
 const Cart = () => {
   return (
-    <PageLayout headerWithLogo={true}>
+    <PageLayout hideMenu={true}>
       {items.length === 0 && (
         <DisplayMessage
           message={

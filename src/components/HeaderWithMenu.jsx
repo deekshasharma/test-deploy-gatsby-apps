@@ -1,10 +1,10 @@
 import React from "react"
-import { AppBar, Button, Grid, Toolbar } from "@material-ui/core"
+import { AppBar, Button, Grid, Toolbar, Typography } from "@material-ui/core"
 import cart from "../images/cart.svg"
 import { Link } from "gatsby"
 import { MuktiLogo } from "./shared/MuktiLogo"
 
-export const HeaderWithMenu = ({ routes }) => {
+export const HeaderWithMenu = ({ routes, numItems }) => {
   return (
     <div style={{ flexGrow: "1" }}>
       <AppBar
@@ -45,6 +45,7 @@ export const HeaderWithMenu = ({ routes }) => {
                   style={{ height: "4vh", width: "4vw", cursor: "pointer" }}
                   alt={"cart"}
                 />
+                <Typography>{numItems || ""}</Typography>
               </Button>
             </Link>
           </Toolbar>

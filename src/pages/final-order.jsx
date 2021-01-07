@@ -6,7 +6,7 @@ const thanksMessage =
   "Thanks for giving us the chance to serve you. We will send an SMS once the order is ready!"
 const FinalOrder = () => {
   return (
-    <PageLayout headerWithLogo={true}>
+    <PageLayout hideMenu={true}>
       <DisplayMessage
         message={thanksMessage}
         linkCaption={"Buy Again"}
