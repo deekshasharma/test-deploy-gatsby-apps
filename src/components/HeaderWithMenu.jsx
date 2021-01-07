@@ -1,17 +1,10 @@
 import React from "react"
-import { AppBar, Button, Grid, makeStyles, Toolbar } from "@material-ui/core"
+import { AppBar, Button, Grid, Toolbar } from "@material-ui/core"
 import cart from "../images/cart.svg"
 import { Link } from "gatsby"
 import { MuktiLogo } from "./shared/MuktiLogo"
 
-const useStyles = makeStyles(theme => ({
-  iconButton: {
-    "&:hover": { backgroundColor: "transparent" },
-  },
-}))
-
 export const HeaderWithMenu = ({ routes }) => {
-  const classes = useStyles()
   return (
     <div style={{ flexGrow: "1" }}>
       <AppBar

@@ -1,6 +1,5 @@
 import React from "react"
 import { PageLayout } from "../components/shared/PageLayout"
-import { Grid, Typography } from "@material-ui/core"
 import { DisplayMessage } from "../components/shared/DisplayMessage"
 
 const thanksMessage =
