@@ -1,5 +1,5 @@
 import React from "react"
-import { AppBar, Grid, makeStyles } from "@material-ui/core"
+import { AppBar, Grid } from "@material-ui/core"
 import { MuktiLogo } from "./shared/MuktiLogo"
 
 export const SimpleHeader = () => {

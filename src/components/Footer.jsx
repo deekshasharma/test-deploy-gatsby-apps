@@ -1,6 +1,7 @@
 import React from "react"
 import { Grid, makeStyles, Typography } from "@material-ui/core"
 import footerLogo from "../images/footer-logo.svg"
+
 const useStyles = makeStyles(theme => ({
   footerLogo: {
     height: "5vw",

@@ -2,6 +2,7 @@ import React from "react"
 import { PageLayout } from "../components/shared/PageLayout"
 import { Grid, Typography } from "@material-ui/core"
 import { MenuCard } from "../components/shared/MenuCard"
+
 const allEats = [
   { name: "Breakfast Sandwich", price: "$5.30" },
   { name: "Sandwich", price: "$9.75" },
