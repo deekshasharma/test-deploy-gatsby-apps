@@ -2,7 +2,19 @@ import React from "react"
 import { Divider, Grid, Typography } from "@material-ui/core"
 import styles from "./OrderSummary.module.css"
 
+// const useStyles = makeStyles(theme => ({
+//   summaryContainer: {
+//     padding: "40px",
+//     border: "0.5px solid gray",
+//     maxWidth: "80vw",
+//   },
+//   summaryDivider: {
+//     padding: "5vh",
+//   },
+// }))
+
 export const OrderSummary = ({ items }) => {
+  // const classes = useStyles()
   const getTotal = () => {
     return items.reduce((acc, item) => acc + parseFloat(item.price), 0)
   }

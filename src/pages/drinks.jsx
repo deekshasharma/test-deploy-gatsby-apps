@@ -25,9 +25,9 @@ const Drinks = () => {
           </Typography>
         </Grid>
         <Grid container spacing={9} style={{ marginTop: "10vh" }}>
-          {allDrinks.map(drink => {
+          {allDrinks.map((drink, key) => {
             return (
-              <Grid item xs={12} md={4}>
+              <Grid key={key} item xs={12} md={4}>
                 <MenuCard name={drink.name} price={drink.price} />
               </Grid>
             )

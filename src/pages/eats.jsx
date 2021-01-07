@@ -26,10 +26,10 @@ const Eats = () => {
           </Typography>
         </Grid>
         <Grid container spacing={9} style={{ marginTop: "10vh" }}>
-          {allEats.map(drink => {
+          {allEats.map((eat, key) => {
             return (
-              <Grid item xs={12} md={4}>
-                <MenuCard name={drink.name} price={drink.price} />
+              <Grid key={key} item xs={12} md={4}>
+                <MenuCard name={eat.name} price={eat.price} />
               </Grid>
             )
           })}

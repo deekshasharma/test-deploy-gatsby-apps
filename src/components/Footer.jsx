@@ -15,12 +15,7 @@ const useStyles = makeStyles(theme => ({
 export const AppFooter = () => {
   const classes = useStyles()
   return (
-    <Grid
-      container
-      direction="column"
-      alignItems={"center"}
-      justifyContent={"center"}
-    >
+    <Grid container direction="column" alignItems={"center"} justify={"center"}>
       <Grid item xs={12}>
         <img src={footerLogo} alt={"logo"} className={classes.footerLogo} />
       </Grid>
