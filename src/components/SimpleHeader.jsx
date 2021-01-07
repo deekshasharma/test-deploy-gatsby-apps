@@ -1,36 +1,13 @@
 import React from "react"
-import { AppBar, Grid, IconButton, makeStyles } from "@material-ui/core"
-import logo from "../images/logo.svg"
-import { navigate } from "gatsby"
-const useStyles = makeStyles(theme => ({
-  iconButton: {
-    "&:hover": { backgroundColor: "transparent" },
-  },
-}))
+import { AppBar, Grid, makeStyles } from "@material-ui/core"
+import { MuktiLogo } from "./shared/MuktiLogo"
 
-export const SimpleHeader = ({ route }) => {
-  const classes = useStyles()
+export const SimpleHeader = () => {
   return (
     <div style={{ flexGrow: "1" }}>
-      <AppBar
-        position="fixed"
-        style={{
-          boxShadow: "0px 0px 0px 0px",
-        }}
-      >
+      <AppBar position="fixed" style={{ boxShadow: "0px 0px 0px 0px" }}>
         <Grid container justify="center">
-          <IconButton
-            disableFocusRipple={true}
-            disableRipple
-            className={classes.iconButton}
-            onClick={() => navigate("/")}
-          >
-            <img
-              src={logo}
-              style={{ height: "12vh", width: "12vw" }}
-              alt={"logo"}
-            />
-          </IconButton>
+          <MuktiLogo />
         </Grid>
       </AppBar>
     </div>
