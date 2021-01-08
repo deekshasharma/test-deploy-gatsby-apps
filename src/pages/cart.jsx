@@ -8,19 +8,20 @@ import { DisplayMessage } from "../components/shared/DisplayMessage"
 const Cart = () => {
   const cart = localStorage.getItem("cart")
   const cartItems = JSON.parse(cart)
+  const cartEmpty = !cartItems || cartItems.length === 0
 
   return (
     <PageLayout hideMenu={true}>
-      {cartItems.length === 0 && (
+      {cartEmpty && (
         <DisplayMessage
           message={
             "Your cart is empty. Please add our freshly prepared beverages or food!"
           }
-          linkCaption={"Order Drinks"}
-          linkTo={"/drinks"}
+          linkCaption={"Try our menu"}
+          linkTo={"/menu"}
         />
       )}
-      {cartItems.length > 0 && (
+      {!cartEmpty && (
         <Grid container style={{ padding: "40px" }} justify="center">
           <OrderSummary items={cartItems} />
           <UserInfo />

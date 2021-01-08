@@ -10,7 +10,7 @@ const FinalOrder = () => {
       <DisplayMessage
         message={thanksMessage}
         linkCaption={"Buy Again"}
-        linkTo={"/drinks"}
+        linkTo={"/menu"}
       />
     </PageLayout>
   )

@@ -46,7 +46,7 @@ export const UserInfo = () => {
           >
             ORDER NOW
           </Button>
-          <Link to={"/drinks"} style={{ color: "black" }}>
+          <Link to={"/menu"} style={{ color: "black" }}>
             <Typography variant="subtitle2">Continue Shopping</Typography>
           </Link>
         </Grid>
