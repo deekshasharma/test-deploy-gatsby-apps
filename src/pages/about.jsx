@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
 const About = () => {
   const classes = useStyles()
   return (
-    <PageLayout>
+    <PageLayout cartSize={localStorage.getItem("cartSize")}>
       <Grid container justify="center" className={classes.aboutContainer}>
         <Grid item>
           <img

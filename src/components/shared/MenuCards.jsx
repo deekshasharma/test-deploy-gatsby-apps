@@ -12,14 +12,10 @@ export const MenuCards = ({ heading, text, items, onAddItem }) => {
         </Typography>
       </Grid>
       <Grid container spacing={9} style={{ marginTop: "10vh" }}>
-        {items.map((eat, key) => {
+        {items.map((item, key) => {
           return (
             <Grid key={key} item xs={12} md={4}>
-              <MenuCard
-                name={eat.name}
-                price={eat.price}
-                onAddItem={onAddItem}
-              />
+              <MenuCard item={item} onAddItem={onAddItem} />
             </Grid>
           )
         })}

@@ -35,7 +35,7 @@ export const OrderSummary = ({ items }) => {
                 {item.name}
               </Typography>
               <Typography gutterBottom variant="body1">
-                {item.price}
+                ${item.price}
               </Typography>
             </Grid>
           )

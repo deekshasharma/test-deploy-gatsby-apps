@@ -20,6 +20,15 @@ const eatsData = {
     "            just getting back into the swing of things and will progressively\n" +
     "            add food items to our cafe as they become available!",
 }
+const onAddItem = item => {
+  const cartSize = localStorage.getItem("cartSize")
+  if (!cartSize) {
+    localStorage.setItem("cartSize", 1)
+  } else {
+    const newCartSize = parseInt(cartSize) + 1
+    localStorage.setItem("cartSize", newCartSize)
+  }
+}
 const Eats = () => {
   return (
     <PageLayout>
@@ -27,6 +36,7 @@ const Eats = () => {
         heading={eatsData.heading}
         text={eatsData.text}
         items={allEats}
+        onAddItem={onAddItem}
       />
     </PageLayout>
   )

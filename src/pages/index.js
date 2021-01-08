@@ -12,7 +12,7 @@ const pageStyles = {
 const IndexPage = () => {
   return (
     <main style={pageStyles}>
-      <PageLayout>
+      <PageLayout cartSize={localStorage.getItem("cartSize")}>
         <img src={heroImage} alt={"coffee"} style={{ width: "100%" }} />
         <CafeLocation />
         <CafeFoodImages />

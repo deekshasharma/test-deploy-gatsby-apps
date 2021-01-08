@@ -8,25 +8,25 @@ import {
 } from "@material-ui/core"
 import addButton from "../../images/add-button.svg"
 
-export const MenuCard = ({ name, price, onAddItem }) => {
+export const MenuCard = ({ item, onAddItem }) => {
   const classes = useStyles()
   return (
     <Card style={{ padding: "10px" }}>
       <Grid container justify="space-between" spacing={5} direction="column">
         <Grid item>
-          <Typography variant={"subtitle2"}>{name}</Typography>
+          <Typography variant={"subtitle2"}>{item.name}</Typography>
         </Grid>
         <Grid item>
           <Grid container justify="space-between" alignItems="center">
             <Grid item>
-              <Typography variant="body2">{price}</Typography>
+              <Typography variant="body2">{item.price}</Typography>
             </Grid>
             <Grid item>
               <IconButton
                 component="span"
                 size="small"
                 className={classes.iconButton}
-                onClick={onAddItem}
+                onClick={() => onAddItem(item)}
               >
                 <img
                   src={addButton}
