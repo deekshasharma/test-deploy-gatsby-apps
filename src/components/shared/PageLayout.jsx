@@ -6,8 +6,7 @@ import { AppFooter } from "../Footer"
 import { SimpleHeader } from "../SimpleHeader"
 
 const routes = [
-  { name: "DRINKS", path: "/drinks" },
-  { name: "EATS", path: "/eats" },
+  { name: "DRINKS & FOOD", path: "/menu" },
   { name: "ABOUT", path: "/about" },
 ]
 

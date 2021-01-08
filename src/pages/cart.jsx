@@ -5,13 +5,6 @@ import { UserInfo } from "../components/checkout/UserInfo"
 import { Grid } from "@material-ui/core"
 import { DisplayMessage } from "../components/shared/DisplayMessage"
 
-// const items = [
-//   { name: "Drip Coffee", price: "2.30" },
-//   { name: "Iced Coffee", price: "3.75" },
-//   { name: "Americano", price: "2.70" },
-//   { name: "Kombucha", price: "6.00" },
-// ]
-
 const Cart = () => {
   const cart = localStorage.getItem("cart")
   const cartItems = JSON.parse(cart)

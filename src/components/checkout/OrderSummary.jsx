@@ -9,8 +9,8 @@ const useStyles = makeStyles(theme => ({
     maxWidth: "80vw",
   },
   summaryDivider: {
-    marginTop: "5vh",
-    marginBottom: "5vh",
+    marginTop: theme.spacing(3),
+    marginBottom: theme.spacing(3),
   },
 }))
 
