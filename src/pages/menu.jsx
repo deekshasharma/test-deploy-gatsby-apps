@@ -1,43 +1,12 @@
 import React, { useState } from "react"
 import { PageLayout } from "../components/shared/PageLayout"
 import { MenuCards } from "../components/shared/MenuCards"
+import { graphql } from "gatsby"
 
-const drinksData = {
-  heading: "Drinks",
-  text: "Now available for delivery locally Mon-Fri from 8am-3pm",
-  allDrinks: [
-    { name: "Drip Coffee", price: "2.30" },
-    { name: "Iced Coffee", price: "3.75" },
-    { name: "Americano", price: "2.70" },
-    { name: "Caramel Latte", price: "6.00" },
-    { name: "Mushroom Tea", price: "6.00" },
-    { name: "Cappuccino", price: "4.00" },
-    { name: "Black Tea", price: "4.75" },
-    { name: "Latte", price: "4.50" },
-    { name: "Hot Chocolate", price: "3.75" },
-  ],
-}
+const Menu = ({ data }) => {
+  const drinksData = data.allMenuDataJson.edges[0].node.drinks
+  const eatsData = data.allMenuDataJson.edges[1].node.eats
 
-const eatsData = {
-  heading: "Eats",
-  text:
-    "Whilst we generally flaunt a much more extensive food menu, we are\n" +
-    "            just getting back into the swing of things and will progressively\n" +
-    "            add food items to our cafe as they become available!",
-  allEats: [
-    { name: "Breakfast Sandwich", price: "5.30" },
-    { name: "Sandwich", price: "9.75" },
-    { name: "Pint of Gelato", price: "12.70" },
-    { name: "Salad", price: "16.00" },
-    { name: "Avocado Toast", price: "8.00" },
-    { name: "Dessert Bars", price: "4.00" },
-    { name: "Cookie", price: "3.75" },
-    { name: "Biscotti", price: "3.50" },
-    { name: "Chips", price: "3.75" },
-  ],
-}
-
-const Menu = () => {
   const [cartSize, setCartSize] = useState(
     parseInt(localStorage.getItem("cartSize"))
   )
@@ -82,5 +51,32 @@ const Menu = () => {
     </PageLayout>
   )
 }
+
+export const query = graphql`
+  {
+    allMenuDataJson {
+      edges {
+        node {
+          drinks {
+            heading
+            text
+            allDrinks {
+              name
+              price
+            }
+          }
+          eats {
+            heading
+            text
+            allEats {
+              name
+              price
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 export default Menu
