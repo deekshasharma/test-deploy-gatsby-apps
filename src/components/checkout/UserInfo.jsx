@@ -1,12 +1,8 @@
 import React from "react"
 import { Button, Grid, TextField, Typography } from "@material-ui/core"
-import { Link, navigate } from "gatsby"
+import { Link } from "gatsby"
 
-export const UserInfo = () => {
-  const onClickOrderNow = () => {
-    localStorage.clear()
-    navigate("/final-order")
-  }
+export const UserInfo = ({ onClickOrder }) => {
   return (
     <Grid
       container
@@ -42,7 +38,7 @@ export const UserInfo = () => {
             size="large"
             variant="contained"
             style={{ marginBottom: "5vh" }}
-            onClick={onClickOrderNow}
+            onClick={onClickOrder}
           >
             ORDER NOW
           </Button>
