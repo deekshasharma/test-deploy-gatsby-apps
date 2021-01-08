@@ -12,11 +12,24 @@ const Cart = () => {
   const cartItems = JSON.parse(cart)
   const cartEmpty = !cartItems || cartItems.length === 0
   const [showThanks, setThanks] = useState(false)
+  const [disableOrder, setDisableOrder] = useState(true)
+  const [fullName, setFullName] = useState("")
+  const [phone, setPhone] = useState("")
 
   const onClickOrder = () => {
     localStorage.clear()
     setThanks(true)
   }
+
+  const OnChangeName = name => {
+    setFullName(name)
+    if (fullName && phone) setDisableOrder(false)
+  }
+  const OnChangePhone = phone => {
+    setPhone(phone)
+    if (fullName && phone) setDisableOrder(false)
+  }
+
   return (
     <PageLayout hideMenu={true}>
       {cartEmpty && !showThanks && (
@@ -31,7 +44,14 @@ const Cart = () => {
       {!cartEmpty && !showThanks && (
         <Grid container style={{ padding: "40px" }} justify="center">
           <OrderSummary items={cartItems} />
-          <UserInfo onClickOrder={onClickOrder} />
+          <UserInfo
+            onClickOrder={onClickOrder}
+            disableOrder={disableOrder}
+            OnChangeName={OnChangeName}
+            OnChangePhone={OnChangePhone}
+            fullName={fullName}
+            phone={phone}
+          />
         </Grid>
       )}
       {cartEmpty && showThanks && (

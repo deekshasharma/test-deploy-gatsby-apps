@@ -2,7 +2,14 @@ import React from "react"
 import { Button, Grid, TextField, Typography } from "@material-ui/core"
 import { Link } from "gatsby"
 
-export const UserInfo = ({ onClickOrder }) => {
+export const UserInfo = ({
+  onClickOrder,
+  disableOrder,
+  OnChangeName,
+  OnChangePhone,
+  fullName,
+  phone,
+}) => {
   return (
     <Grid
       container
@@ -23,6 +30,8 @@ export const UserInfo = ({ onClickOrder }) => {
             label="Full Name"
             variant="filled"
             style={{ paddingBottom: "5vh" }}
+            onChange={e => OnChangeName(e.target.value)}
+            value={fullName}
           />
           <TextField
             color="secondary"
@@ -32,6 +41,8 @@ export const UserInfo = ({ onClickOrder }) => {
             variant="filled"
             type="number"
             style={{ paddingBottom: "5vh" }}
+            onChange={e => OnChangePhone(e.target.value)}
+            value={phone}
           />
           <Button
             color="secondary"
@@ -39,6 +50,7 @@ export const UserInfo = ({ onClickOrder }) => {
             variant="contained"
             style={{ marginBottom: "5vh" }}
             onClick={onClickOrder}
+            disabled={disableOrder}
           >
             ORDER NOW
           </Button>
