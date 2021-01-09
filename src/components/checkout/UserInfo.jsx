@@ -1,7 +1,22 @@
 import React from "react"
 import { Button, Grid, TextField, Typography } from "@material-ui/core"
 import { Link } from "gatsby"
+import makeStyles from "@material-ui/core/styles/makeStyles"
 
+const useStyles = makeStyles(theme => ({
+  infoContainer: {
+    marginTop: "10vh",
+    border: "0.5px solid gray",
+    padding: theme.spacing(5),
+    width: "80vw",
+  },
+  textField: {
+    paddingBottom: theme.spacing(5),
+  },
+  button: {
+    marginBottom: theme.spacing(4),
+  },
+}))
 export const UserInfo = ({
   onClickOrder,
   disableOrder,
@@ -10,17 +25,9 @@ export const UserInfo = ({
   fullName,
   phone,
 }) => {
+  const classes = useStyles()
   return (
-    <Grid
-      container
-      justify="center"
-      style={{
-        marginTop: "10vh",
-        border: "0.5px solid gray",
-        padding: "40px",
-        width: "80vw",
-      }}
-    >
+    <Grid container justify="center" className={classes.infoContainer}>
       <Grid item xs={12} md={5}>
         <Grid container direction="column" justify="center" alignItems="center">
           <TextField
@@ -29,7 +36,7 @@ export const UserInfo = ({
             id="full-name"
             label="Full Name"
             variant="filled"
-            style={{ paddingBottom: "5vh" }}
+            className={classes.textField}
             onChange={e => OnChangeName(e.target.value)}
             value={fullName}
           />
@@ -40,7 +47,7 @@ export const UserInfo = ({
             label="Phone Number"
             variant="filled"
             type="number"
-            style={{ paddingBottom: "5vh" }}
+            className={classes.textField}
             onChange={e => OnChangePhone(e.target.value)}
             value={phone}
           />
@@ -48,7 +55,7 @@ export const UserInfo = ({
             color="secondary"
             size="large"
             variant="contained"
-            style={{ marginBottom: "5vh" }}
+            className={classes.button}
             onClick={onClickOrder}
             disabled={disableOrder}
           >

@@ -4,7 +4,7 @@ import makeStyles from "@material-ui/core/styles/makeStyles"
 
 const useStyles = makeStyles(theme => ({
   summaryContainer: {
-    padding: "40px",
+    padding: theme.spacing(5),
     border: "0.5px solid gray",
     maxWidth: "80vw",
   },
