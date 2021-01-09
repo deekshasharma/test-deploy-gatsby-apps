@@ -10,10 +10,8 @@ const useStyles = makeStyles(theme => ({
       marginBottom: theme.spacing(3),
     },
   },
-  address: {
-    paddingRight: "10vw",
-  },
-  typography: { paddingBottom: "5vh" },
+  address: { marginRight: theme.spacing(10) },
+  typography: { paddingBottom: theme.spacing(4) },
 }))
 
 export const CafeLocation = () => {
