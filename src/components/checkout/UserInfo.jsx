@@ -1,7 +1,12 @@
 import React from "react"
-import { Button, Grid, TextField, Typography } from "@material-ui/core"
+import {
+  Button,
+  Grid,
+  TextField,
+  Typography,
+  makeStyles,
+} from "@material-ui/core"
 import { Link } from "gatsby"
-import makeStyles from "@material-ui/core/styles/makeStyles"
 
 const useStyles = makeStyles(theme => ({
   infoContainer: {
