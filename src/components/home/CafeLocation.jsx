@@ -1,6 +1,6 @@
 import React from "react"
 import { Grid, makeStyles, Typography } from "@material-ui/core"
-import cafeLocation from "../images/cafe-location-image.svg"
+import cafeLocation from "../../images/cafe-location-image.svg"
 
 const useStyles = makeStyles(theme => ({
   cafeImg: {

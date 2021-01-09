@@ -1,9 +1,9 @@
 import React from "react"
 import { Grid, makeStyles, Typography } from "@material-ui/core"
-import food1 from "../images/food1.svg"
-import food2 from "../images/food2.svg"
-import food3 from "../images/food3.svg"
-import food5 from "../images/food5.svg"
+import food1 from "../../images/food1.svg"
+import food2 from "../../images/food2.svg"
+import food3 from "../../images/food3.svg"
+import food5 from "../../images/food5.svg"
 
 const text =
   "Proudly serving local and organic fresh food, juices and smoothies!"
