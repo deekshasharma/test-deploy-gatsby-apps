@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SimpleHeader component Snapshot renders SimpleHeader correctly 1`] = `
+<div
+  style={
+    Object {
+      "flexGrow": "1",
+    }
+  }
+>
+  <header
+    className="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed MuiPaper-elevation4"
+    style={
+      Object {
+        "boxShadow": "0px 0px 0px 0px",
+      }
+    }
+  >
+    <div
+      className="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-center"
+    >
+      <button
+        className="MuiButtonBase-root MuiIconButton-root makeStyles-iconButton-1"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiIconButton-label"
+        >
+          <img
+            alt="logo"
+            className="makeStyles-logo-2"
+            src="test-file-stub"
+          />
+        </span>
+      </button>
+    </div>
+  </header>
+</div>
+`;
