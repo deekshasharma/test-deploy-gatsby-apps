@@ -42,4 +42,16 @@ describe("renders header components with menu", () => {
     const cartSizeText = screen.getByText("5")
     expect(cartSizeText).toBeInTheDocument()
   })
+
+  it("render menu text", () => {
+    const routes = [
+      { name: "Food & Drinks", route: "/menu" },
+      { name: "About", route: "/about" },
+    ]
+    render(<HeaderWithMenu routes={routes} />)
+    const menuText = screen.getByText("Food & Drinks")
+    const aboutText = screen.getByText("About")
+    expect(menuText).toBeInTheDocument()
+    expect(aboutText).toBeInTheDocument()
+  })
 })
