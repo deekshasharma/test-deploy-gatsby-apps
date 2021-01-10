@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderWithMenu Snapshot renders HeaderWithMenu correctly 1`] = `
+<div
+  style={
+    Object {
+      "flexGrow": "1",
+    }
+  }
+>
+  <header
+    className="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed MuiPaper-elevation4"
+    style={
+      Object {
+        "boxShadow": "0px 0px 0px 0px",
+      }
+    }
+  >
+    <div
+      className="MuiGrid-root MuiGrid-container"
+    >
+      <button
+        className="MuiButtonBase-root MuiIconButton-root makeStyles-iconButton-5"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiIconButton-label"
+        >
+          <img
+            alt="logo"
+            className="makeStyles-logo-6"
+            src="test-file-stub"
+          />
+        </span>
+      </button>
+      <div
+        className="MuiToolbar-root MuiToolbar-regular makeStyles-toolBar-1 MuiToolbar-gutters"
+      >
+        <a
+          className="makeStyles-route-2"
+          href="/cart"
+        >
+          <button
+            className="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-routeButton-3"
+            disabled={false}
+            onBlur={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <span
+              className="MuiButton-label"
+            >
+              <img
+                alt="cart"
+                className="makeStyles-cartImg-4"
+                src="test-file-stub"
+              />
+              <p
+                className="MuiTypography-root MuiTypography-body1"
+              >
+                
+              </p>
+            </span>
+          </button>
+        </a>
+      </div>
+    </div>
+  </header>
+</div>
+`;

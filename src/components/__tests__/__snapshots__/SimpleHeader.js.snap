@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SimpleHeader component Snapshot renders SimpleHeader correctly 1`] = `
+exports[`SimpleHeader Snapshot renders SimpleHeader correctly 1`] = `
 <div
   style={
     Object {
