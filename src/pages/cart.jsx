@@ -21,11 +21,11 @@ const Cart = () => {
     setThanks(true)
   }
 
-  const OnChangeName = name => {
+  const onChangeName = name => {
     setFullName(name)
     if (fullName && phone) setDisableOrder(false)
   }
-  const OnChangePhone = phone => {
+  const onChangePhone = phone => {
     setPhone(phone)
     if (fullName && phone) setDisableOrder(false)
   }
@@ -47,8 +47,8 @@ const Cart = () => {
           <UserInfo
             onClickOrder={onClickOrder}
             disableOrder={disableOrder}
-            onChangeName={OnChangeName}
-            onChangePhone={OnChangePhone}
+            onChangeName={onChangeName}
+            onChangePhone={onChangePhone}
             fullName={fullName}
             phone={phone}
           />
