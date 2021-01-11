@@ -38,13 +38,17 @@ const menuData = {
   },
 }
 
-describe("header", () => {
-  it("renders Mukti logo image", () => {
+describe("header and footer", () => {
+  it("renders header and footer", () => {
     render(<Menu data={menuData} />)
     const headerLogo = screen.getByAltText("logo")
     const footerLogo = screen.getByAltText("footer-logo")
+    const address = screen.getByText(
+      "2835 Cook Street Village, Victoria, British Columbia"
+    )
     expect(headerLogo).toBeInTheDocument()
     expect(footerLogo).toBeInTheDocument()
+    expect(address).toBeInTheDocument()
   })
 
   it("renders cart image", () => {
