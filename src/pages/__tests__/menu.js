@@ -39,11 +39,13 @@ const menuData = {
 }
 
 describe("header", () => {
-  // it("renders Mukti logo image", () => {
-  //   render(<Menu data={menuData} />)
-  //   const logo = screen.getByAltText("logo")
-  //   expect(logo).toBeInTheDocument()
-  // })
+  it("renders Mukti logo image", () => {
+    render(<Menu data={menuData} />)
+    const headerLogo = screen.getByAltText("logo")
+    const footerLogo = screen.getByAltText("footer-logo")
+    expect(headerLogo).toBeInTheDocument()
+    expect(footerLogo).toBeInTheDocument()
+  })
 
   it("renders cart image", () => {
     render(<Menu data={menuData} />)
@@ -53,10 +55,10 @@ describe("header", () => {
 })
 
 describe("renders menu cards", () => {
-  it("renders Menu correctly", () => {
-    const tree = renderer.create(<Menu data={menuData} />).toJSON()
-    expect(tree).toMatchSnapshot()
-  })
+  // it("renders Menu correctly", () => {
+  //   const tree = renderer.create(<Menu data={menuData} />).toJSON()
+  //   expect(tree).toMatchSnapshot()
+  // })
 
   it("renders the menu text correctly", () => {
     render(<Menu data={menuData} />)
