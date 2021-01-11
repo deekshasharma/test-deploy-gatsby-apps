@@ -1,5 +1,6 @@
 import React from "react"
 import { fireEvent, render, screen } from "@testing-library/react"
+import userEvent from "@testing-library/user-event"
 import { UserInfo } from "../checkout/UserInfo"
 
 describe("UserInfo", () => {
@@ -76,7 +77,7 @@ describe("UserInfo", () => {
   })
 
   it("renders an enabled button", () => {
-    onChangeName.mockImplementation(() => true)
+    // onChangeName.mockImplementation(() => true)
     render(
       <UserInfo
         onClickOrder={onClickOrder}
@@ -89,12 +90,24 @@ describe("UserInfo", () => {
     )
     const orderButton = screen.getByRole("button")
     expect(orderButton).not.toBeDisabled()
+  })
 
-    fireEvent.change(screen.getByLabelText("Full Name"), {
-      target: { value: "6316817890" },
-    })
-    screen.debug()
-
-    // expect(screen.getByText("6316817890")).toBeInTheDocument()
+  it("verify the onChangeName", () => {
+    render(
+      <UserInfo
+        onClickOrder={onClickOrder}
+        onChangeName={onChangeName}
+        onChangePhone={onChangePhone}
+        disableOrder={false}
+        fullName={fullName}
+        phone={phone}
+      />
+    )
+    const nameTextField = screen.getByLabelText("Full Name")
+    // fireEvent.change(nameTextField, {
+    //   target: { value: "Deeksha" },
+    // })
+    userEvent.type(nameTextField, "Deeksha")
+    expect(onChangeName).toHaveBeenCalledTimes(7)
   })
 })
