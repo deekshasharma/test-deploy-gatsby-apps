@@ -1,10 +1,10 @@
 import React from "react"
-import { render, screen, fireEvent } from "@testing-library/react"
+import { fireEvent, render, screen } from "@testing-library/react"
 import { UserInfo } from "../checkout/UserInfo"
 
 describe("UserInfo", () => {
   const onClickOrder = jest.fn()
-  const OnChangeName = jest.fn()
+  const onChangeName = jest.fn()
   const onChangePhone = jest.fn()
   const disableOrder = true
   const fullName = ""
@@ -14,7 +14,7 @@ describe("UserInfo", () => {
     render(
       <UserInfo
         onClickOrder={onClickOrder}
-        onChangeName={OnChangeName}
+        onChangeName={onChangeName}
         onChangePhone={onChangePhone}
         disableOrder={disableOrder}
         fullName={fullName}
@@ -30,7 +30,7 @@ describe("UserInfo", () => {
     render(
       <UserInfo
         onClickOrder={onClickOrder}
-        onChangeName={OnChangeName}
+        onChangeName={onChangeName}
         onChangePhone={onChangePhone}
         disableOrder={disableOrder}
         fullName={fullName}
@@ -47,7 +47,7 @@ describe("UserInfo", () => {
     render(
       <UserInfo
         onClickOrder={onClickOrder}
-        onChangeName={OnChangeName}
+        onChangeName={onChangeName}
         onChangePhone={onChangePhone}
         disableOrder={disableOrder}
         fullName={fullName}
@@ -62,7 +62,7 @@ describe("UserInfo", () => {
     render(
       <UserInfo
         onClickOrder={onClickOrder}
-        onChangeName={OnChangeName}
+        onChangeName={onChangeName}
         onChangePhone={onChangePhone}
         disableOrder={disableOrder}
         fullName={"Deeksha"}
@@ -73,5 +73,28 @@ describe("UserInfo", () => {
     const phoneTextField = screen.getByLabelText("Phone Number")
     expect(nameTextField.value).toBe("Deeksha")
     expect(phoneTextField.value).toBe("6316817890")
+  })
+
+  it("renders an enabled button", () => {
+    onChangeName.mockImplementation(() => true)
+    render(
+      <UserInfo
+        onClickOrder={onClickOrder}
+        onChangeName={onChangeName}
+        onChangePhone={onChangePhone}
+        disableOrder={false}
+        fullName={fullName}
+        phone={phone}
+      />
+    )
+    const orderButton = screen.getByRole("button")
+    expect(orderButton).not.toBeDisabled()
+
+    fireEvent.change(screen.getByLabelText("Full Name"), {
+      target: { value: "6316817890" },
+    })
+    screen.debug()
+
+    // expect(screen.getByText("6316817890")).toBeInTheDocument()
   })
 })
