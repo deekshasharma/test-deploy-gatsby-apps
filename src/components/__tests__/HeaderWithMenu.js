@@ -19,7 +19,7 @@ describe("renders header components with menu", () => {
   it("renders 4 buttons with all routes", () => {
     const routes = [
       { name: "Food & Drinks", route: "/menu" },
-      { name: "about", route: "/about" },
+      { name: "About", route: "/about" },
     ]
     render(<HeaderWithMenu routes={routes} />)
     expect(screen.getAllByRole("button")).toHaveLength(4)
