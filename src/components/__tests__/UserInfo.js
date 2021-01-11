@@ -1,5 +1,5 @@
 import React from "react"
-import { render, screen } from "@testing-library/react"
+import { render, screen, fireEvent } from "@testing-library/react"
 import { UserInfo } from "../checkout/UserInfo"
 
 describe("UserInfo", () => {
@@ -56,5 +56,22 @@ describe("UserInfo", () => {
     )
     const orderButton = screen.getByRole("button")
     expect(orderButton).toBeDisabled()
+  })
+
+  it("call to onPhoneChange", () => {
+    render(
+      <UserInfo
+        onClickOrder={onClickOrder}
+        onChangeName={OnChangeName}
+        onChangePhone={onChangePhone}
+        disableOrder={disableOrder}
+        fullName={"Deeksha"}
+        phone={"6316817890"}
+      />
+    )
+    const nameTextField = screen.getByLabelText("Full Name")
+    const phoneTextField = screen.getByLabelText("Phone Number")
+    expect(nameTextField.value).toBe("Deeksha")
+    expect(phoneTextField.value).toBe("6316817890")
   })
 })
