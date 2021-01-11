@@ -24,14 +24,9 @@ export const AppFooter = () => {
           className={classes.footerLogo}
         />
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={8}>
         <Typography variant="body2" align={"center"} gutterBottom>
-          2835 Cook Street Village
-        </Typography>
-      </Grid>
-      <Grid item xs={12}>
-        <Typography variant="body2" align={"center"}>
-          Victoria, British Columbia
+          2835 Cook Street Village, Victoria, British Columbia
         </Typography>
       </Grid>
     </Grid>
