@@ -18,7 +18,11 @@ export const AppFooter = () => {
   return (
     <Grid container direction="column" alignItems={"center"} justify={"center"}>
       <Grid item xs={12}>
-        <img src={footerLogo} alt={"logo"} className={classes.footerLogo} />
+        <img
+          src={footerLogo}
+          alt={"footer-logo"}
+          className={classes.footerLogo}
+        />
       </Grid>
       <Grid item xs={12}>
         <Typography variant="body2" align={"center"} gutterBottom>
