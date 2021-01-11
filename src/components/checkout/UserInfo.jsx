@@ -25,8 +25,8 @@ const useStyles = makeStyles(theme => ({
 export const UserInfo = ({
   onClickOrder,
   disableOrder,
-  OnChangeName,
-  OnChangePhone,
+  onChangeName,
+  onChangePhone,
   fullName,
   phone,
 }) => {
@@ -42,7 +42,7 @@ export const UserInfo = ({
             label="Full Name"
             variant="filled"
             className={classes.textField}
-            onChange={e => OnChangeName(e.target.value)}
+            onChange={e => onChangeName(e.target.value)}
             value={fullName}
           />
           <TextField
@@ -53,7 +53,7 @@ export const UserInfo = ({
             variant="filled"
             type="number"
             className={classes.textField}
-            onChange={e => OnChangePhone(e.target.value)}
+            onChange={e => onChangePhone(e.target.value)}
             value={phone}
           />
           <Button

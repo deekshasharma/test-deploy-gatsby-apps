@@ -47,8 +47,8 @@ const Cart = () => {
           <UserInfo
             onClickOrder={onClickOrder}
             disableOrder={disableOrder}
-            OnChangeName={OnChangeName}
-            OnChangePhone={OnChangePhone}
+            onChangeName={OnChangeName}
+            onChangePhone={OnChangePhone}
             fullName={fullName}
             phone={phone}
           />
