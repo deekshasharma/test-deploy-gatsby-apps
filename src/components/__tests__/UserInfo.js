@@ -58,7 +58,7 @@ describe("UserInfo", () => {
     expect(orderButton).toBeDisabled()
   })
 
-  it("call to onPhoneChange", () => {
+  it("renders full name and phone number", () => {
     render(
       <UserInfo
         onClickOrder={onClickOrder}
