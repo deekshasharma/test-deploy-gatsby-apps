@@ -1,6 +1,6 @@
 import React from "react"
 import IndexPage from "../index"
-import renderer from "react-test-renderer"
+// import renderer from "react-test-renderer"
 import { useStaticQuery } from "gatsby"
 import { render, screen } from "@testing-library/react"
 
@@ -26,7 +26,7 @@ beforeEach(() => {
 })
 
 describe("renders IndexPage correctly", () => {
-  // it("renders Menu correctly", () => {
+  // it("renders IndexPage correctly", () => {
   //   const tree = renderer.create(<IndexPage />).toJSON()
   //   expect(tree).toMatchSnapshot()
   // })
