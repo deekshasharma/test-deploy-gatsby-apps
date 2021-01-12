@@ -27,7 +27,6 @@ const Cart = () => {
   const onClickOrder = () => {
     setThanks(true)
     setCartEmpty(true)
-    // localStorage.clear()
     checkAndClearCache()
   }
 
