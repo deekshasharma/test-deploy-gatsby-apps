@@ -4,10 +4,12 @@ import { PageLayout } from "../components/shared/PageLayout"
 import { UserInfo } from "../components/checkout/UserInfo"
 import { Grid } from "@material-ui/core"
 import { DisplayMessage } from "../components/shared/DisplayMessage"
+const thanksMessage =
+  "Thanks for giving us the chance to serve you. We will send an SMS once the order is ready!"
+const emptyCartMessage =
+  '"Hmm! 🤔 your cart is empty. Why don\'t you try our freshly prepared beverages or food?"'
 
 const Cart = () => {
-  const thanksMessage =
-    "Thanks for giving us the chance to serve you. We will send an SMS once the order is ready!"
   const [cart, setCart] = useState(undefined)
   const [cartEmpty, setCartEmpty] = useState(true)
   const [showThanks, setThanks] = useState(false)
@@ -45,9 +47,7 @@ const Cart = () => {
     <PageLayout hideMenu={true}>
       {cartEmpty && !showThanks && (
         <DisplayMessage
-          message={
-            "Hmm! 🤔 your cart is empty. Why don't you try our freshly prepared beverages or food?"
-          }
+          message={emptyCartMessage}
           linkCaption={"Try our menu"}
           linkTo={"/menu"}
         />
