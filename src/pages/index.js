@@ -3,6 +3,7 @@ import { PageLayout } from "../components/shared/PageLayout"
 import heroImage from "../images/hero-image.svg"
 import { CafeLocation } from "../components/home/CafeLocation"
 import CafeFoodImages from "../components/home/CafeFoodImages"
+import { useEffect, useState } from "react"
 
 const pageStyles = {
   color: "#232129",
@@ -10,9 +11,15 @@ const pageStyles = {
 }
 
 const IndexPage = () => {
+  const [cartSize, setCartSize] = useState(undefined)
+
+  useEffect(() => {
+    setCartSize(localStorage.getItem("cartSize"))
+  }, [])
+
   return (
     <main style={pageStyles}>
-      <PageLayout cartSize={localStorage.getItem("cartSize")}>
+      <PageLayout cartSize={cartSize}>
         <img src={heroImage} alt={"coffee"} style={{ width: "100%" }} />
         <CafeLocation />
         <CafeFoodImages />

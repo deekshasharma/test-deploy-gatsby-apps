@@ -1,8 +1,11 @@
 module.exports = {
+  siteMetadata: {
+    title: `Mukti Cafe`,
+    description: `Fully organic and delightful cafe`,
+  },
   plugins: [
     `gatsby-plugin-material-ui`,
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
     "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",

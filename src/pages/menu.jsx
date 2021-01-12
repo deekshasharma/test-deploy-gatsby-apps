@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { PageLayout } from "../components/shared/PageLayout"
 import { MenuCards } from "../components/shared/MenuCards"
 import { graphql } from "gatsby"
@@ -7,31 +7,44 @@ const Menu = ({ data }) => {
   const drinksData = data.allMenuDataJson.edges[0].node.drinks
   const eatsData = data.allMenuDataJson.edges[1].node.eats
 
-  const [cartSize, setCartSize] = useState(
-    parseInt(localStorage.getItem("cartSize"))
-  )
+  const [cartSize, setCartSize] = useState(0)
+
+  useEffect(() => {
+    const size = parseInt(localStorage.getItem("cartSize"))
+    setCartSize(size)
+  }, [])
+
+  const getCartFromCache = () => {
+    if (typeof localStorage !== "undefined") return localStorage.getItem("cart")
+  }
+
+  const saveCartToCache = cart => {
+    if (typeof localStorage !== "undefined")
+      localStorage.setItem("cart", JSON.stringify(cart))
+  }
 
   const onAddItem = item => {
     updateCartSize()
-    if (!localStorage.getItem("cart")) {
-      const cart = [item]
-      localStorage.setItem("cart", JSON.stringify(cart))
+    if (!getCartFromCache()) {
+      saveCartToCache([item])
     } else {
-      const currentCart = localStorage.getItem("cart")
+      const currentCart = getCartFromCache()
       const cartJSON = JSON.parse(currentCart)
       const newCart = [...cartJSON, item]
-      localStorage.setItem("cart", JSON.stringify(newCart))
+      saveCartToCache(newCart)
     }
   }
 
   const updateCartSize = () => {
     if (!cartSize) {
       setCartSize(1)
-      localStorage.setItem("cartSize", 1)
+      typeof localStorage !== "undefined" &&
+        localStorage.setItem("cartSize", "1")
     } else {
       const newCartSize = cartSize + 1
       setCartSize(newCartSize)
-      localStorage.setItem("cartSize", newCartSize.toString())
+      typeof localStorage !== "undefined" &&
+        localStorage.setItem("cartSize", newCartSize.toString())
     }
   }
   return (
