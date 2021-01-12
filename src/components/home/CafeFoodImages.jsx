@@ -1,9 +1,6 @@
 import React from "react"
 import { Grid, makeStyles, Typography } from "@material-ui/core"
-import food1 from "../../images/food1.svg"
-import food2 from "../../images/food2.svg"
-import food3 from "../../images/food3.svg"
-import food5 from "../../images/food5.svg"
+import { graphql, useStaticQuery } from "gatsby"
 
 const text =
   "Proudly serving local and organic fresh food, juices and smoothies!"
@@ -18,8 +15,11 @@ const useStyles = makeStyles(theme => ({
   imagesContainer: { width: "100%" },
   image: { width: "20vw" },
 }))
-export const CafeFoodImages = () => {
+
+const CafeFoodImages = () => {
   const classes = useStyles()
+  const data = useStaticQuery(query)
+  const foodImages = data.allFile.edges
   return (
     <>
       <Grid container>
@@ -37,13 +37,34 @@ export const CafeFoodImages = () => {
             justify={"space-evenly"}
             className={classes.imagesContainer}
           >
-            <img src={food1} alt={"shakes"} className={classes.image} />
-            <img src={food2} alt={"food"} className={classes.image} />
-            <img src={food3} alt={"smoothie"} className={classes.image} />
-            <img src={food5} alt={"coffee"} className={classes.image} />
+            {foodImages.map((image, key) => {
+              return (
+                <img
+                  key={key}
+                  src={image.node.publicURL}
+                  alt={image.node.name}
+                  className={classes.image}
+                />
+              )
+            })}
           </Grid>
         </Grid>
       </Grid>
     </>
   )
 }
+
+export const query = graphql`
+  {
+    allFile(filter: { dir: { regex: "/food-images/" } }) {
+      edges {
+        node {
+          name
+          publicURL
+        }
+      }
+    }
+  }
+`
+
+export default CafeFoodImages
