@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { PageLayout } from "../components/shared/PageLayout"
 import { Grid, makeStyles, Typography } from "@material-ui/core"
 import aboutCoffee from "../images/about-coffee.svg"
@@ -27,8 +27,14 @@ const useStyles = makeStyles(theme => ({
 
 const About = () => {
   const classes = useStyles()
+  const [cartSize, setCartSize] = useState(undefined)
+
+  useEffect(() => {
+    setCartSize(localStorage.getItem("cartSize"))
+  }, [])
+
   return (
-    <PageLayout cartSize={localStorage.getItem("cartSize")}>
+    <PageLayout cartSize={cartSize}>
       <Grid container justify="center" className={classes.aboutContainer}>
         <Grid item>
           <img

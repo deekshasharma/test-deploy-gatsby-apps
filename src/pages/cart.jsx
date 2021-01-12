@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { OrderSummary } from "../components/checkout/OrderSummary"
 import { PageLayout } from "../components/shared/PageLayout"
 import { UserInfo } from "../components/checkout/UserInfo"
@@ -8,18 +8,29 @@ import { DisplayMessage } from "../components/shared/DisplayMessage"
 const Cart = () => {
   const thanksMessage =
     "Thanks for giving us the chance to serve you. We will send an SMS once the order is ready!"
-  const cart = localStorage.getItem("cart")
-  const cartItems = JSON.parse(cart)
-  const cartEmpty = !cartItems || cartItems.length === 0
+  const [cart, setCart] = useState(undefined)
+  const [cartEmpty, setCartEmpty] = useState(true)
   const [showThanks, setThanks] = useState(false)
   const [disableOrder, setDisableOrder] = useState(true)
   const [fullName, setFullName] = useState("")
   const [phone, setPhone] = useState("")
 
+  useEffect(() => {
+    const storedCart = localStorage.getItem("cart")
+    const cartItems = JSON.parse(storedCart)
+    setCart(cartItems)
+    setCartEmpty(!cartItems || cartItems.length === 0)
+  }, [])
+
   const onClickOrder = () => {
-    localStorage.clear()
     setThanks(true)
+    setCartEmpty(true)
+    // localStorage.clear()
+    checkAndClearCache()
   }
+
+  const checkAndClearCache = () =>
+    typeof localStorage !== "undefined" && localStorage.clear()
 
   const onChangeName = name => {
     setFullName(name)
@@ -43,7 +54,7 @@ const Cart = () => {
       )}
       {!cartEmpty && !showThanks && (
         <Grid container style={{ padding: "40px" }} justify="center">
-          <OrderSummary items={cartItems} />
+          <OrderSummary items={cart} />
           <UserInfo
             onClickOrder={onClickOrder}
             disableOrder={disableOrder}
