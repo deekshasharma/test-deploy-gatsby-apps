@@ -2,7 +2,7 @@ import * as React from "react"
 import { PageLayout } from "../components/shared/PageLayout"
 import heroImage from "../images/hero-image.svg"
 import { CafeLocation } from "../components/home/CafeLocation"
-import { CafeFoodImages } from "../components/home/CafeFoodImages"
+import CafeFoodImages from "../components/home/CafeFoodImages"
 
 const pageStyles = {
   color: "#232129",
