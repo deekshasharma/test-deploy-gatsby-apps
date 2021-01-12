@@ -21,7 +21,7 @@ export const CafeLocation = () => {
       <Grid item>
         <img
           src={cafeLocation}
-          alt={"Mukti Cafe"}
+          alt={"mukti-cafe-house"}
           className={classes.cafeImg}
         />
       </Grid>

@@ -20,7 +20,7 @@ const IndexPage = () => {
   return (
     <main style={pageStyles}>
       <PageLayout cartSize={cartSize}>
-        <img src={heroImage} alt={"coffee"} style={{ width: "100%" }} />
+        <img src={heroImage} alt={"mukti-coffee"} style={{ width: "100%" }} />
         <CafeLocation />
         <CafeFoodImages />
       </PageLayout>
