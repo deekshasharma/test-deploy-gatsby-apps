@@ -10,7 +10,10 @@ const useStyles = makeStyles(theme => ({
       marginBottom: theme.spacing(3),
     },
   },
-  address: { marginRight: theme.spacing(10) },
+  address: {
+    width: "40%",
+    [theme.breakpoints.down("sm")]: { width: "80%" },
+  },
   typography: { paddingBottom: theme.spacing(4) },
 }))
 
@@ -26,7 +29,12 @@ export const CafeLocation = () => {
         />
       </Grid>
       <Grid item className={classes.address}>
-        <Grid container direction="column">
+        <Grid
+          container
+          direction="column"
+          justify="center"
+          alignItems={"flex-start"}
+        >
           <Typography variant="h6" gutterBottom>
             LOCATION
           </Typography>
@@ -55,12 +63,7 @@ export const CafeLocation = () => {
           <Typography variant="subtitle1" gutterBottom color="textSecondary">
             250.585.7765
           </Typography>
-          <Typography
-            variant="subtitle1"
-            gutterBottom
-            color="textSecondary"
-            className={classes.typography}
-          >
+          <Typography variant="subtitle1" gutterBottom color="textSecondary">
             mukticafeorder@gmail.com
           </Typography>
         </Grid>
