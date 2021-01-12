@@ -2,7 +2,10 @@ import React from "react"
 import renderer from "react-test-renderer"
 import { HeaderWithMenu } from "../HeaderWithMenu"
 import { render, screen } from "@testing-library/react"
-
+const routes = [
+  { name: "Food & Drinks", route: "/menu" },
+  { name: "About", route: "/about" },
+]
 describe("HeaderWithMenu Snapshot", function () {
   it("renders HeaderWithMenu correctly", () => {
     const tree = renderer.create(<HeaderWithMenu routes={[]} />).toJSON()
@@ -17,10 +20,6 @@ describe("renders header components with menu", () => {
   })
 
   it("renders 4 buttons with all routes", () => {
-    const routes = [
-      { name: "Food & Drinks", route: "/menu" },
-      { name: "About", route: "/about" },
-    ]
     render(<HeaderWithMenu routes={routes} />)
     expect(screen.getAllByRole("button")).toHaveLength(4)
   })
@@ -39,19 +38,12 @@ describe("renders header components with menu", () => {
 
   it("renders cart-size for non-empty cart", () => {
     render(<HeaderWithMenu routes={[]} cartSize={"5"} />)
-    const cartSizeText = screen.getByText("5")
-    expect(cartSizeText).toBeInTheDocument()
+    expect(screen.getByText("5")).toBeInTheDocument()
   })
 
   it("render menu text", () => {
-    const routes = [
-      { name: "Food & Drinks", route: "/menu" },
-      { name: "About", route: "/about" },
-    ]
     render(<HeaderWithMenu routes={routes} />)
-    const menuText = screen.getByText("Food & Drinks")
-    const aboutText = screen.getByText("About")
-    expect(menuText).toBeInTheDocument()
-    expect(aboutText).toBeInTheDocument()
+    expect(screen.getByText("Food & Drinks")).toBeInTheDocument()
+    expect(screen.getByText("About")).toBeInTheDocument()
   })
 })
