@@ -7,7 +7,7 @@ import { DisplayMessage } from "../components/shared/DisplayMessage"
 const thanksMessage =
   "Thanks for giving us the chance to serve you. We will send an SMS once the order is ready!"
 const emptyCartMessage =
-  '"Hmm! 🤔 your cart is empty. Why don\'t you try our freshly prepared beverages or food?"'
+  "Hmm! 🤔 your cart is empty. Why don't you try our freshly prepared beverages or food?"
 
 const Cart = () => {
   const [cart, setCart] = useState(undefined)
