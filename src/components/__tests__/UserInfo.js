@@ -69,7 +69,7 @@ describe("UserInfo", () => {
         onClickOrder={onClickOrder}
         onChangeName={onChangeName}
         onChangePhone={onChangePhone}
-        disableOrder={false}
+        disableOrder={disableOrder}
       />
     )
     const nameTextField = screen.getByLabelText("Full Name")
