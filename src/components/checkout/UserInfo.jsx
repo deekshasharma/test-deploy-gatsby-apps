@@ -27,8 +27,6 @@ export const UserInfo = ({
   disableOrder,
   onChangeName,
   onChangePhone,
-  fullName,
-  phone,
 }) => {
   const classes = useStyles()
   return (
@@ -43,7 +41,6 @@ export const UserInfo = ({
             variant="filled"
             className={classes.textField}
             onChange={e => onChangeName(e.target.value)}
-            value={fullName}
           />
           <TextField
             color="secondary"
@@ -54,7 +51,6 @@ export const UserInfo = ({
             type="number"
             className={classes.textField}
             onChange={e => onChangePhone(e.target.value)}
-            value={phone}
           />
           <Button
             color="secondary"

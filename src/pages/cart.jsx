@@ -49,8 +49,6 @@ const Cart = () => {
             disableOrder={disableOrder}
             onChangeName={onChangeName}
             onChangePhone={onChangePhone}
-            fullName={fullName}
-            phone={phone}
           />
         </Grid>
       )}
