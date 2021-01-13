@@ -1,6 +1,5 @@
 import React from "react"
 import { render, screen } from "@testing-library/react"
-import renderer from "react-test-renderer"
 import Menu from "../menu"
 
 const menuData = {
@@ -59,11 +58,6 @@ describe("header and footer", () => {
 })
 
 describe("renders menu cards", () => {
-  // it("renders Menu correctly", () => {
-  //   const tree = renderer.create(<Menu data={menuData} />).toJSON()
-  //   expect(tree).toMatchSnapshot()
-  // })
-
   it("renders the menu text correctly", () => {
     render(<Menu data={menuData} />)
     const eatMenuItem = screen.getByText("Breakfast Sandwich")
