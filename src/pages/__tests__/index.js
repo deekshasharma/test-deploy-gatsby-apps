@@ -1,7 +1,7 @@
 import React from "react"
 import IndexPage from "../index"
-import { useStaticQuery } from "gatsby"
 import { render, screen } from "@testing-library/react"
+import { useStaticQuery } from "gatsby"
 
 beforeEach(() => {
   useStaticQuery.mockReturnValue({
@@ -23,14 +23,11 @@ beforeEach(() => {
     },
   })
 })
-
 describe("renders IndexPage correctly", () => {
-  it("renders two images", () => {
+  it("renders two food images", () => {
     render(<IndexPage />)
-    const altText1 = screen.getByAltText("food")
-    expect(altText1).toBeInTheDocument()
-    const altText2 = screen.getByAltText("drinks")
-    expect(altText2).toBeInTheDocument()
+    expect(screen.getByAltText("food")).toBeInTheDocument()
+    expect(screen.getByAltText("drinks")).toBeInTheDocument()
   })
 
   it("renders location details", () => {
