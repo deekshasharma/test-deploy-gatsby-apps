@@ -11,7 +11,7 @@ const pageStyles = {
 }
 
 const IndexPage = () => {
-  const [cartSize, setCartSize] = useState(undefined)
+  const [cartSize, setCartSize] = useState(0)
 
   useEffect(() => {
     setCartSize(localStorage.getItem("cartSize"))

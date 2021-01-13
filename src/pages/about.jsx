@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
 
 const About = () => {
   const classes = useStyles()
-  const [cartSize, setCartSize] = useState(undefined)
+  const [cartSize, setCartSize] = useState(0)
 
   useEffect(() => {
     setCartSize(localStorage.getItem("cartSize"))
