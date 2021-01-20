@@ -14,7 +14,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "jest --watch",
-    "test-coverage": "jest --coverage"
+    "test-coverage": "jest --coverage",
+    "deploy": "gatsby-plugin-s3 deploy"
   },
   "license": "0BSD",
   "dependencies": {
@@ -27,6 +28,7 @@
     "gatsby-plugin-material-ui": "^2.1.10",
     "gatsby-plugin-mdx": "^1.6.0",
     "gatsby-plugin-react-helmet": "^3.6.0",
+    "gatsby-plugin-s3": "^0.3.8",
     "gatsby-plugin-sharp": "^2.10.1",
     "gatsby-source-filesystem": "^2.7.0",
     "gatsby-transformer-json": "^2.9.0",

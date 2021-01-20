@@ -32,5 +32,11 @@ module.exports = {
         path: `./src/data/`,
       },
     },
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: "mukti-cafe-bucket",
+      },
+    },
   ],
 }
