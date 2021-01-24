@@ -35,7 +35,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-        bucketName: "mukti-cafe-bucket",
+        bucketName: "mukti-bucket1",
+        acl: null,
+        protocol: "https",
+        hostname: "www.mukti.com",
       },
     },
   ],
