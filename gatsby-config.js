@@ -32,14 +32,5 @@ module.exports = {
         path: `./src/data/`,
       },
     },
-    {
-      resolve: `gatsby-plugin-s3`,
-      options: {
-        bucketName: "mukti-bucket1",
-        acl: null,
-        protocol: "https",
-        hostname: "www.mukti.com",
-      },
-    },
   ],
 }
