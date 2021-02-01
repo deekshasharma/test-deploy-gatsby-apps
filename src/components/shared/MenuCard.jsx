@@ -30,7 +30,7 @@ export const MenuCard = ({ item, onAddItem }) => {
               >
                 <img
                   src={addButton}
-                  alt={"add-item"}
+                  alt={"add-" + item.name}
                   style={{ width: "6vw", height: "6vh" }}
                 />
               </IconButton>
