@@ -45,7 +45,9 @@ export const OrderSummary = ({ items }) => {
       <Grid item>
         <Grid container justify="space-between">
           <Typography> ORDER TOTAL</Typography>
-          <Typography> ${getTotal().toFixed(2)}</Typography>
+          <Typography data-cy={"total-amount"}>
+            ${getTotal().toFixed(2)}
+          </Typography>
         </Grid>
       </Grid>
     </Grid>

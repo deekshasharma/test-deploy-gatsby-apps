@@ -59,6 +59,7 @@ export const UserInfo = ({
             className={classes.button}
             onClick={onClickOrder}
             disabled={disableOrder}
+            data-cy={"order-now"}
           >
             ORDER NOW
           </Button>

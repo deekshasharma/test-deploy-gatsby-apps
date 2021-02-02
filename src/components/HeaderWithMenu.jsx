@@ -48,7 +48,7 @@ export const HeaderWithMenu = ({ routes, cartSize }) => {
             <Link to={"/cart"} className={classes.route}>
               <Button className={classes.routeButton}>
                 <img src={cart} className={classes.cartImg} alt={"cart"} />
-                <Typography>{cartSize || ""}</Typography>
+                <Typography data-cy={"cart-size"}>{cartSize || ""}</Typography>
               </Button>
             </Link>
           </Toolbar>
