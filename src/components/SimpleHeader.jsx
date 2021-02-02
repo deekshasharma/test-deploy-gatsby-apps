@@ -4,7 +4,7 @@ import { MuktiLogo } from "./shared/MuktiLogo"
 
 export const SimpleHeader = () => {
   return (
-    <div style={{ flexGrow: "1" }}>
+    <div data-cy={"without-menu"} style={{ flexGrow: "1" }}>
       <AppBar position="fixed" style={{ boxShadow: "0px 0px 0px 0px" }}>
         <Grid container justify="center">
           <MuktiLogo />

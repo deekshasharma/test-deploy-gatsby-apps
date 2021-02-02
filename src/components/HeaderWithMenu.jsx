@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
 export const HeaderWithMenu = ({ routes, cartSize }) => {
   const classes = useStyles()
   return (
-    <div style={{ flexGrow: "1" }}>
+    <div data-cy={"with-menu"} style={{ flexGrow: "1" }}>
       <AppBar
         position="fixed"
         style={{
