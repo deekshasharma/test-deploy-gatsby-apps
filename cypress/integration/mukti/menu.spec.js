@@ -5,12 +5,12 @@ context("Ordering Workflow", () => {
     cy.visit("/menu")
   })
 
-  it("Test if Drip Coffee added to the cart", () => {
+  it("Add a Drip Coffee to the cart", () => {
     cy.get('[alt="add-Drip Coffee"]').click()
     cy.get("[data-cy=cart-size]").should("have.text", "1")
   })
 
-  it("Test that navigation does not affect the cart size", () => {
+  it("Navigation does not affect the cart size", () => {
     cy.get('[alt="add-Drip Coffee"]').click()
 
     cy.visit("/about")
@@ -20,13 +20,13 @@ context("Ordering Workflow", () => {
     cy.get("[data-cy=cart-size]").should("have.text", "1")
   })
 
-  it("Test if multiple items can be added to the cart", () => {
+  it("Add multiple items can be added to the cart", () => {
     cy.get('[alt="add-Americano"]').click()
     cy.get('[alt="add-Salad"]').click()
     cy.get("[data-cy=cart-size]").should("have.text", "2")
   })
 
-  it("Test food and drink ordering workflow", () => {
+  it("Ordering Food and Drink", () => {
     //Adds the items in the cart
     cy.get('[alt="add-Americano"]').click()
     cy.get('[alt="add-Salad"]').click()
