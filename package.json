@@ -4,9 +4,7 @@
   "private": true,
   "description": "A Static Gatsby Site for hypothetical Mukti Cafe",
   "author": "deekshasharma",
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": ["gatsby"],
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
@@ -15,7 +13,6 @@
     "clean": "gatsby clean",
     "test": "jest --watch",
     "test-coverage": "jest --coverage",
-    "deploy": "gatsby-plugin-s3 deploy",
     "cypress-open": "cypress open",
     "cypress-test": "start-server-and-test develop http://localhost:8000 cypress-open"
   },
