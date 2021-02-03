@@ -15,7 +15,6 @@
     "clean": "gatsby clean",
     "test": "jest --watch",
     "test-coverage": "jest --coverage",
-    "deploy": "gatsby-plugin-s3 deploy"
   },
   "license": "0BSD",
   "dependencies": {
