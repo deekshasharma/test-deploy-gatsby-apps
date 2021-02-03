@@ -1,5 +1,6 @@
 const thanksMsg =
   "Thanks for giving us the chance to serve you. We will send an SMS once the order is ready!"
+
 context("Ordering Workflow", () => {
   beforeEach(() => {
     cy.visit("/menu")
@@ -26,12 +27,12 @@ context("Ordering Workflow", () => {
     cy.get("[data-cy=cart-size]").should("have.text", "2")
   })
 
-  it("Ordering Food and Drink", () => {
-    //Adds the items in the cart
+  it("Order Food and Drink", () => {
+    //Add the items in the cart
     cy.get('[alt="add-Americano"]').click()
     cy.get('[alt="add-Salad"]').click()
 
-    //Visits cart page to verify items and total amount
+    //Visit cart page to verify items and total amount
     cy.visit("/cart")
     cy.get("[data-cy=total-amount]").should("have.text", "$18.70")
     cy.contains("Americano").should("have.text", "Americano")
