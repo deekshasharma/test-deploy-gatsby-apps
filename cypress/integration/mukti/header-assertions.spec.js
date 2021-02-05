@@ -1,4 +1,4 @@
-context("Local Storage", () => {
+context("Header Assertions", () => {
   beforeEach(() => {
     cy.visit("/")
   })
