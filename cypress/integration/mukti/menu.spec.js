@@ -35,8 +35,8 @@ context("Ordering Workflow", () => {
     //Visit cart page to verify items and total amount
     cy.visit("/cart")
     cy.get("[data-cy=total-amount]").should("have.text", "$18.70")
-    cy.contains("Americano").should("have.text", "Americano")
-    cy.contains("Salad").should("have.text", "Salad")
+    cy.contains("Americano").should("be.visible")
+    cy.contains("Salad").should("be.visible")
 
     //Order Now button should be disabled
     cy.get("[data-cy=order-now]").should("be.disabled")
