@@ -22,7 +22,7 @@ export const PageLayout = ({ children, hideMenu, cartSize }) => {
         <Grid item xs={12} style={{ paddingTop: "20vh" }}>
           <Grid container justify={"center"}>
             <Grid item xs={12}>
-              <main>{children}</main>
+              <div>{children}</div>
             </Grid>
           </Grid>
         </Grid>
