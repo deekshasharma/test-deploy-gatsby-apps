@@ -1,0 +1,54 @@
+# # Workflow to test and deploy Mukti cafe site
+
+name: CI/CD workflow for mukti site
+
+# Controls when the action will run.
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ module05-pipeline ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  test_build_deploy:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: Set up Node
+        uses: actions/setup-node@v2.1.4
+        with:
+          node-version: 12.x
+
+      - name: Install dependencies and run unit tests
+        run: |
+          yarn
+          yarn test
+
+      - name: Run end-to-end tests
+        uses: cypress-io/github-action@v2.8.2
+        with:
+          build: yarn build
+          start: yarn start
+          wait-on: http://localhost:8000
+
+      - name: Generate new build
+        run: yarn build
+
+      - name: Deploy site to Netlify
+        uses: nwtgck/actions-netlify@v1.1.11
+        with:
+          publish-dir: './public'
+          production-branch: module05-pipeline
+          deploy-message: 'Deployment complete'
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
