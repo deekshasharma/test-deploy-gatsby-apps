@@ -1,6 +1,6 @@
 # # Workflow to test and deploy Mukti cafe site
 
-name: CI/CD workflow for mukti site
+name: CI/CD workflow for mukti cafe site
 
 # Controls when the action will run.
 on:
