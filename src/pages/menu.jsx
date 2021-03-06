@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { PageLayout } from "../components/shared/PageLayout"
 import { MenuCards } from "../components/shared/MenuCards"
 import { graphql } from "gatsby"
+import Seo from "../components/seo"
 
 const Menu = ({ data }) => {
   const drinksData = data.allMenuDataJson.edges[0].node.drinks
@@ -48,20 +49,26 @@ const Menu = ({ data }) => {
     }
   }
   return (
-    <PageLayout cartSize={cartSize}>
-      <MenuCards
-        heading={drinksData.heading}
-        text={drinksData.text}
-        items={drinksData.allDrinks}
-        onAddItem={onAddItem}
+    <>
+      <Seo
+        title={"Mukti Menu"}
+        description={"Collection of our home grown fresh food with coffee"}
       />
-      <MenuCards
-        heading={eatsData.heading}
-        text={eatsData.text}
-        items={eatsData.allEats}
-        onAddItem={onAddItem}
-      />
-    </PageLayout>
+      <PageLayout cartSize={cartSize}>
+        <MenuCards
+          heading={drinksData.heading}
+          text={drinksData.text}
+          items={drinksData.allDrinks}
+          onAddItem={onAddItem}
+        />
+        <MenuCards
+          heading={eatsData.heading}
+          text={eatsData.text}
+          items={eatsData.allEats}
+          onAddItem={onAddItem}
+        />
+      </PageLayout>
+    </>
   )
 }
 

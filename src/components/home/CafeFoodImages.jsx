@@ -12,8 +12,15 @@ const useStyles = makeStyles(theme => ({
     width: "100%",
     backgroundColor: theme.palette.secondary[200],
   },
-  imagesContainer: { width: "100%" },
-  image: { width: "20vw" },
+  imagesContainer: {},
+  image: {
+    width: "20vw",
+    height: "80vh",
+    [theme.breakpoints.down("sm")]: {
+      width: "40vw",
+      height: "50vh",
+    },
+  },
 }))
 
 const CafeFoodImages = () => {
@@ -31,12 +38,7 @@ const CafeFoodImages = () => {
           </Grid>
         </Grid>
         <Grid item xs={12}>
-          <Grid
-            container
-            alignItems="stretch"
-            justify={"space-evenly"}
-            className={classes.imagesContainer}
-          >
+          <Grid container justify={"space-evenly"}>
             {foodImages.map((image, key) => {
               return (
                 <img

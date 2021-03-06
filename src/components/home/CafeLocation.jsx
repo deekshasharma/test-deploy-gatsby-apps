@@ -1,12 +1,14 @@
 import React from "react"
 import { Grid, makeStyles, Typography } from "@material-ui/core"
-import cafeLocation from "../../images/cafe-location-image.svg"
+import cafeLocation from "../../images/cafe-location.webp"
 
 const useStyles = makeStyles(theme => ({
   cafeImg: {
     width: "40vw",
+    height: "100vh",
     [theme.breakpoints.down("sm")]: {
-      width: "100vw",
+      width: "96vw",
+      height: "70vh",
       marginBottom: theme.spacing(3),
     },
   },
