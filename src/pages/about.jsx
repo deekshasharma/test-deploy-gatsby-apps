@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react"
 import { PageLayout } from "../components/shared/PageLayout"
 import { Grid, makeStyles, Typography } from "@material-ui/core"
-import aboutCoffee from "../images/about-coffee.svg"
+import aboutCoffee from "../images/about-coffee.webp"
+import Seo from "../components/seo"
 
 const aboutText =
   "Founded in the pristine soil of Vancouver Island, British Columbia, Mukti cafe aspires to offer the most delightful and sustainable coffee and to share our passion with those who care as deeply as we do.  With mindfulness and transparency as our values, we buy ethical beans from the farmers and follow fair trade practices.\n" +
@@ -34,27 +35,33 @@ const About = () => {
   }, [])
 
   return (
-    <PageLayout cartSize={cartSize}>
-      <Grid container justify="center" className={classes.aboutContainer}>
-        <Grid item>
-          <img
-            src={aboutCoffee}
-            alt="about-mukti-cafe"
-            className={classes.aboutImg}
-          />
-        </Grid>
+    <>
+      <Seo
+        title={"Mukti Cafe story"}
+        description={"Mukti Cafe is in the heart of Victoria downtown"}
+      />
+      <PageLayout cartSize={cartSize}>
+        <Grid container justify="center" className={classes.aboutContainer}>
+          <Grid item>
+            <img
+              src={aboutCoffee}
+              alt="about-mukti-cafe"
+              className={classes.aboutImg}
+            />
+          </Grid>
 
-        <Grid item>
-          <Typography gutterBottom variant="subtitle1">
-            {aboutText}
-          </Typography>
-        </Grid>
+          <Grid item>
+            <Typography gutterBottom variant="subtitle1">
+              {aboutText}
+            </Typography>
+          </Grid>
 
-        <Grid item>
-          <Typography variant="subtitle1">{conclusionText}</Typography>
+          <Grid item>
+            <Typography variant="subtitle1">{conclusionText}</Typography>
+          </Grid>
         </Grid>
-      </Grid>
-    </PageLayout>
+      </PageLayout>
+    </>
   )
 }
 export default About

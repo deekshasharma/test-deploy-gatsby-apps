@@ -77,6 +77,7 @@ describe("renders menu cards", () => {
 
   it("renders correct number add icons menu items", () => {
     render(<Menu data={menuData} />)
-    expect(screen.getAllByAltText("add-item")).toHaveLength(2)
+    expect(screen.getByAltText("add-Drip Coffee")).toBeInTheDocument()
+    expect(screen.getByAltText("add-Breakfast Sandwich")).toBeInTheDocument()
   })
 })

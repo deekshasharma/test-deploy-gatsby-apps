@@ -2,6 +2,7 @@
 
 exports[`SimpleHeader Snapshot renders SimpleHeader correctly 1`] = `
 <div
+  data-cy="without-menu"
   style={
     Object {
       "flexGrow": "1",

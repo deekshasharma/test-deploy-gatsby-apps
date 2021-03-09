@@ -2,6 +2,7 @@
 
 exports[`HeaderWithMenu Snapshot renders HeaderWithMenu correctly 1`] = `
 <div
+  data-cy="with-menu"
   style={
     Object {
       "flexGrow": "1",
@@ -81,6 +82,7 @@ exports[`HeaderWithMenu Snapshot renders HeaderWithMenu correctly 1`] = `
               />
               <p
                 className="MuiTypography-root MuiTypography-body1"
+                data-cy="cart-size"
               >
                 
               </p>
